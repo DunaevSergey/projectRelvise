@@ -1,0 +1,29 @@
+// @mixin ibg($position: center) {
+// 	position: relative;
+// 	img {
+// 		object-fit: cover;
+// 		object-position: $position;
+// 		position: absolute;
+// 		width: 100%;
+// 		height: 100%;
+// 		top: 0;
+// 		left: 0;
+// 	}
+// }
+
+// //REM
+// @function rem($px) {
+// 	$result: math.div($px, 16) + rem;
+// 	@return $result;
+// }
+// //EM
+// @function em($px) {
+// 	$result: mathx.div($px, 16) + em;
+// 	@return $result;
+// }
+$maxWidth: 1048;
+@mixin adaptiv-font($pcSize, $mobSize) {
+ $addSize: $pcSize - $mobSize;
+ $maxWidth: $maxWidth - 320;
+ font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
